@@ -36,6 +36,7 @@ class MorseConverter():
     # Ask for the word
         morse_code += " "
         citext = ''
+        error = 0
 
         #check for space
         for code in morse_code:
@@ -48,24 +49,25 @@ class MorseConverter():
                 i = 0
             
             else:
-
+                
                 i += 1
 
                 if i == 2:
 
                     self.decipher += ' '
-
+                
                 else:
-
                     try:
-
                         self.decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
                     
                     except:
+                        error += 1
 
-                        pass
+                    finally:
+                        citext = ''
 
-                    citext = ''
+        if error > 0:
+            return 'Invalid Morse Code.'
 
         return self.decipher
 
