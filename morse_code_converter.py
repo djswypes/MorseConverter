@@ -18,7 +18,7 @@ class MorseConverter():
 
     def __init__(self) -> None:
         self.cipher = ''
-        self.decipher = ''
+        self.__decipher = ''
 
     def encrypt(self, message):
 
