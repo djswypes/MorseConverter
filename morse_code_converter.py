@@ -17,7 +17,7 @@ MORSE_CODE_DICT = { 'A':'.-', 'B':'-...',
 class MorseConverter():
 
     def __init__(self) -> None:
-        self.cipher = ''
+        self.__cipher = ''
         self.__decipher = ''
 
     def encrypt(self, message):
@@ -25,12 +25,12 @@ class MorseConverter():
         for letter in message.upper():
             
             if letter == ' ':
-                self.cipher += ' '
+                self.__cipher += ' '
 
             if letter in MORSE_CODE_DICT:
-                self.cipher += MORSE_CODE_DICT[letter] + ' '
+                self.__cipher += MORSE_CODE_DICT[letter] + ' '
 
-        return self.cipher
+        return self.__cipher
 
     def decrypt(self, morse_code):
     # Ask for the word
@@ -54,11 +54,11 @@ class MorseConverter():
 
                 if i == 2:
 
-                    self.decipher += ' '
+                    self.__decipher += ' '
                 
                 else:
                     try:
-                        self.decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
+                        self.__decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
                     
                     except:
                         error += 1
@@ -69,6 +69,6 @@ class MorseConverter():
         if error > 0:
             return 'Invalid Morse Code.'
 
-        return self.decipher
+        return self.__decipher
 
 

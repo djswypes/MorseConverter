@@ -12,10 +12,10 @@ while code_is_running:
         print(encrypted_message)
 
     elif user_options == 'decrypt':
-        message_to_decrypt = input('Morse code to decrypt:').strip()
+        message_to_decrypt = input('Morse code to decrypt: ').strip()
         decrypted_message = morse().decrypt(message_to_decrypt)
         print(decrypted_message)
-        
+
     else:
         print('Wrong choice of function!')
         continue
