@@ -22,8 +22,6 @@ while code_is_running:
 
     cut_conncection = input('Do you wish to cut the connection "Y"/ "N"? ').title()
 
-    if cut_conncection == 'N':
-        pass
-
-    else:
+    if cut_conncection != 'N':
         break
+
